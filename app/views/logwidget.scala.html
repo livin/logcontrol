@@ -1,0 +1,20 @@
+@import com.assetcontrol.logcontrol.LogSummary
+
+@(logSummary: LogSummary)
+
+
+<div id="mainlog" class="logwidget">
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info <span class="badge badge-info">{{ logSummary.infoCount }}</span></li>
+        <li class="list-group-item list-group-item-warning"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning <span class="badge badge-warning">{{ logSummary.warningCount }}</span></li>
+        <li class="list-group-item list-group-item-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Error <span class="badge badge-danger">{{ logSummary.errorCount }}</span></li>
+    </ul>
+
+    <div class="form-group">
+        <label>Interval</label>
+        <input id="intervalSeconds" type="number" v-model.number="intervalSeconds" class="form-control">
+    </div>
+
+    <small>Log file: @logSummary.logPath</small> <br/>
+
+</div>

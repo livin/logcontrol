@@ -1,0 +1,12 @@
+@import com.assetcontrol.logcontrol.LogSummary
+@()
+
+@main("Log Control") {
+  <h1>Log Control Dashboard</h1>
+
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4 col-xs-12">
+      @logwidget(LogSummary.getInstance())
+    </div>
+  </div>
+}
